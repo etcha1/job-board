@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ jobOffer.title }} - {{ jobOffer.company }}{% endblock %}
+
+{% block body %}
+<main class="job-board-page">
+    <section class="job-board-section">
+        <h1 class="job-board-heading">{{ jobOffer.title }}</h1>
+        <p class="job-board-subtitle">{{ jobOffer.company }} — {{ jobOffer.location }}</p>
+        <div class="job-board-detail-card">
+            <h2>Job Description</h2>
+            <p>{{ jobOffer.description }}</p>
+        </div>
+        <div class="job-board-cta-row">
+            <a href="{{ jobOffer.url }}" class="job-board-cta-button">Apply Now</a>
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }} - Find your next job{% endblock %}
+
+{% block body %}
+<main class="job-board-page">
+    <section class="job-board-section">
+        <h1 class="job-board-heading">{{ title }}</h1>
+        <p class="job-board-subtitle">Explore the latest developer jobs — remote, hybrid, and onsite.</p>
+
+        <form action="#" method="get" class="job-board-search-form">
+            <input name="q" placeholder="Search job title or company" class="job-board-search-input">
+            <button type="submit" class="job-board-search-button">Search</button>
+        </form>
+
+        <h2 class="job-board-section-title">Recent Jobs</h2>
+        <ul class="job-board-list">
+            {% for jobOffer in lastJobOffers %}
+                <li class="job-board-item">
+                    <a href="{{ path('job_offer_show', {'id': jobOffer.id}) }}">
+                        <strong>{{ jobOffer.title }}</strong>
+                    </a>
+                    <div class="job-board-meta">{{ jobOffer.company }} — {{ jobOffer.location }}</div>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+</main>
+{% endblock %}

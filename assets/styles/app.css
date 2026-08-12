@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    background-color: #f9fafb;
+    color: #111827;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.job-board-page {
+    padding: 2rem;
+}
+
+.job-board-section {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.job-board-heading {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.job-board-subtitle {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+
+.job-board-search-form {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.job-board-search-input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    width: 360px;
+}
+
+.job-board-search-button,
+.job-board-cta-button {
+    padding: 0.75rem 1rem;
+    background: #111827;
+    color: #fff;
+    border-radius: 6px;
+    border: 0;
+    cursor: pointer;
+}
+
+.job-board-section-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.job-board-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.job-board-item {
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.job-board-meta {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.job-board-detail-card {
+    text-align: left;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.job-board-detail-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.job-board-cta-row {
+    margin-top: 1.5rem;
+}
+
+.job-board-cta-button {
+    display: inline-block;
+    text-decoration: none;
+}
