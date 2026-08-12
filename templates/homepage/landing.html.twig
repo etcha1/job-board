@@ -8,9 +8,9 @@
         <h1 class="job-board-heading">{{ title }}</h1>
         <p class="job-board-subtitle">Explore the latest developer jobs — remote, hybrid, and onsite.</p>
 
-        <form action="#" method="get" class="job-board-search-form">
-            <input name="q" placeholder="Search job title or company" class="job-board-search-input">
-            <button type="submit" class="job-board-search-button">Search</button>
+        <form action="{{ path('job_offer_list') }}" method="get" class="job-board-search-form">
+            <input name="q" placeholder="Search job title or company" class="job-board-search-input" id="job-board-search-input">
+            <button type="submit" class="job-board-search-button" id="job-board-search-button">Search</button>
         </form>
 
         <h2 class="job-board-section-title">Recent Jobs</h2>

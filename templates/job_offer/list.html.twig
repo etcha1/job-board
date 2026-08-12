@@ -1,0 +1,10 @@
+<ul class="job-board-list">
+    {% for jobOffer in jobOffers %}
+        <li class="job-board-item">
+            <a href="{{ path('job_offer_show', {'id': jobOffer.id}) }}">
+                <strong>{{ jobOffer.title }}</strong>
+            </a>
+            <div class="job-board-meta">{{ jobOffer.company }} — {{ jobOffer.location }}</div>
+        </li>
+    {% endfor %}
+</ul>

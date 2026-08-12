@@ -17,4 +17,15 @@ class JobOfferRepository extends ServiceEntityRepository
     }
 
     // Add custom query methods here if needed
+
+    public function findByTitleOrCompany(string $query): array
+    {
+        return $this->createQueryBuilder('j')
+            ->andWhere('LOWER(j.title) LIKE :title OR LOWER(j.company) LIKE :company')
+            ->setParameter('title', '%' . strtolower($query) . '%')
+            ->setParameter('company', '%' . strtolower($query) . '%')
+            ->orderBy('j.postedAt', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
 }

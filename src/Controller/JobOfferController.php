@@ -5,11 +5,26 @@ namespace App\Controller;
 use App\Entity\JobOffer;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 class JobOfferController extends AbstractController
 {
+	#[Route('/job-offers', name: 'job_offer_list')]
+	public function list(Request $request, EntityManagerInterface $entityManager): Response
+	{
+		$query = $request->query->get('q');
+
+		$jobOffers = $entityManager
+			->getRepository(JobOffer::class)
+			->findByTitleOrCompany($query);
+
+		return $this->render('job_offer/list.html.twig', [
+			'jobOffers' => $jobOffers,
+		]);
+	}
+
 	#[Route('/job-offers/{id}', name: 'job_offer_show')]
 	public function show(EntityManagerInterface $entityManager, int $id): Response
 	{
